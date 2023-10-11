@@ -22,6 +22,7 @@ function handleSlider() {
 
 function setIndicator(color) {
     indicator.style.backgroundColor = color;
+    indicator.style.boxShadow = `0px 0px 12px 1px ${color}`;
 }
 
 let password = "";
@@ -150,9 +151,6 @@ generateBtn.addEventListener("click", () => {
     password = sufflePassword(Array.from(password));
     passwordDisplay.value = password;
     calcStrength();
-
-    // console.log("Password: ", password);
-    // console.log("Password Length: ", password.length);
 });
 
 

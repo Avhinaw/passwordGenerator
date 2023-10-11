@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap');
-*{
+*,
+*::before,
+*::after{
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
@@ -27,6 +29,7 @@
     font-weight: 400;
     text-align: center;
     margin-top: 10px;
+    letter-spacing: 2px;
 }
 .input-copy{
     position: relative;
@@ -111,7 +114,21 @@
     border-radius: 1rem;
     background-image: linear-gradient(hsl(285, 91%, 52%), hsl(285, 91%, 52%));
     background-repeat: no-repeat;
-    background-size: 47.1053% 100%;
+}
+.slider::-webkit-slider-thumb{
+    appearance: none;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: yellow;
+    margin-top: -3px;
+    box-shadow: 0px 0px 20px 0px rgba(255,229,61,0.50);
+    transition: all 100ms ease-in;
+}
+.slider::-webkit-slider-thumb:hover{
+    background-color: #160628;
+    outline: 2px solid cyan;
+    box-shadow: 0px 0px 25px 5px rgba(61, 242, 255, 0.8);
 }
 .conditions{
     display: flex;
@@ -123,7 +140,7 @@
     margin: 1rem 0;
     display: flex;
     align-items: center;
-    gap: 0 1rem;
+    gap: 1rem;
 }
 .check input{
     appearance: none;
@@ -164,13 +181,17 @@
     color: #ffe53d;
     background-color: hsl(285, 91%, 52%);
     font-size: 1.4rem;
+    letter-spacing: 1px;
     font-weight: bold;
     cursor: pointer;
     user-select: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
 .generatebutton:hover{
     background-color: hsl(285, 100%, 23%);
     border-bottom: .35rem solid #9c9250;
-    transition: 0.3s all;
+    transition: 0.3s all ease-in;
 }
